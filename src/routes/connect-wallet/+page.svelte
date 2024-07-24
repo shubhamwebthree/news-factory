@@ -8,11 +8,11 @@
 >
   <form method="POST" action="?/login">
     <div class="">
-      
       <div class="">
         <label
-          class=""
-          for="paymail"
+        class=""
+        for="paymail"
+   
         >
           Paymail
         </label>
@@ -44,7 +44,7 @@
       type="submit"
       class=""
       >
-      <!-- <a href="/dashboard"> -->
+      <!-- <a href="/dashboard"> --> 
       LogIn</button>
     </div>
   </form>
@@ -52,6 +52,7 @@
     <!-- this message is ephemeral; it exists because the page was rendered in
 		   response to a form submission. it will vanish if the user reloads -->
     <p class="pt-2">Logged In. Your Balance is {form?.balance}</p>
+    <p class= "pt-2">Your Address is {form?.address}</p>
   {/if}
 </div>
 
@@ -107,3 +108,11 @@ class="mt-10 pt-10 w-full max-w-xl p-12 mx-auto rounded-lg   bg-white/30 ring-2 
     <p class="pt-2">Sign Up Done </p>
   {/if}
 </div>
+
+
+
+
+
+
+
+<!-- <h1 method = "GET" action = "?/pubkey" ></h1> -->

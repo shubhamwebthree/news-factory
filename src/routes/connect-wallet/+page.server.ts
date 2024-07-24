@@ -21,9 +21,15 @@ export const actions = {
     const DefaultWalletBalance = await walletModule.getWalletBalance({});
     console.log(DefaultWalletBalance);
 
-    return { success: true, balance : DefaultWalletBalance.data.balance.summary }; 
-    },  
+    // const walletCreation1 = await walletModule.createWallet({ walletName: 'HelloShubham' });
+    // console.log(walletCreation1);
+    
+    const addresses = await walletModule.getAddressesByWalletId({});
+    console.log(addresses);
+    
 
+    return { success: true, address:addresses.data.addresses[0] , balance : DefaultWalletBalance.data.balance.summary }; 
+    },  
     signup: async ({ request }) => {
       const data = await request.formData();
   
@@ -42,8 +48,24 @@ export const actions = {
       // console.log(DefaultWalletBalance);
   
       return { success: true }; 
-      }
-      
+      },
+
+      // pubkey: async ({ request }) => {
+      //   const data = await request.formData();
+    
+      //   const neucron = new NeucronSDK();
+        
+      //   const authModule = neucron.authentication;
+      //   const walletModule = neucron.wallet;
+        
+      //   const walletCreation1 = await walletModule.createWallet({ walletName: 'HelloShubham' });
+      //   // console.log(walletCreation1);
+        
+      //   const addresses = await walletModule.getAddressesByWalletId({ walletId: walletCreation1.walletID });
+      //   // console.log(addresses);
+
+      //   return { success: true, addresses };
+      // },
 
 
     // pay: async ({ request }) => {
@@ -68,8 +90,7 @@ export const actions = {
         // const DefaultWalletBalance = await walletModule.getWalletBalance({});
         // console.log(DefaultWalletBalance);
         
-        // const addresses = await walletModule.getAddressesByWalletId({});
-        // console.log(addresses);
+
         
         // const options = {
         //     outputs: [
